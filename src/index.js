@@ -10,7 +10,7 @@ app
     .set("view engine", "ejs")
     .engine("html",require("ejs").renderFile)
 
-//use
+//use 
 app 
     .use(morgan("dev"))
     .use(express.static(__dirname+"/static"))
