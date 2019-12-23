@@ -1,5 +1,5 @@
 module.exports = {
-    entry:["./src/app/js/index.js","./src/app/css-o-sass/estilos.scss"],
+    entry:["./src/app/js/index.js","./src/app/css-o-sass/estilosLocales.css"],
     output: {
         path: __dirname + "/src/static", 
         filename: "bundel.js"
@@ -12,7 +12,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test:/\.scss$/i,
+                test:/\.(scss|css)$/i,
                 use:
                 [
                     "style-loader",
