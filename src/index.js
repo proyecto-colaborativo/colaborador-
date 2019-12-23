@@ -1,3 +1,4 @@
+const cookie = require("cookie-parser")
 const express = require("express")
 const morgan = require("morgan")
 const path = require("path")
@@ -12,6 +13,7 @@ app
 
 //use 
 app 
+    .use(cookie())
     .use(morgan("dev"))
     .use(express.static(__dirname+"/static"))
 

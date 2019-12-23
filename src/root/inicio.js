@@ -3,7 +3,10 @@ const root= Router()
 
 //url
 root 
-    .get("/",(req,res)=>{
+    .get("/",async(req,res)=>{
+       await res.cookie("nombre","pedro")
+        console.log(req.cookies);
+        
         res.render("inicio.html")
     })
 
