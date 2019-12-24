@@ -140,7 +140,7 @@ eval("var content = __webpack_require__(/*! !../../../node_modules/css-loader/di
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n//# sourceURL=webpack:///./src/app/js/index.js?");
+eval("\n\nvar pedirApi = function pedirApi() {\n    fetch(\"./api\").then(function (res) {\n        return res.json();\n    }).then(function (json) {\n        console.log(json);\n    });\n};\n\n//se ejecuta cuando recargas la pajina\nwindow.onload = pedirApi;\n\n//# sourceURL=webpack:///./src/app/js/index.js?");
 
 /***/ }),
 
