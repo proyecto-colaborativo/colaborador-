@@ -1,9 +1,18 @@
+const MiniCssExtractPlugin =require("mini-css-extract-plugin")
+
 module.exports = {
-    entry:["./src/app/js/index.js","./src/app/css-o-sass/estilosLocales.css"],
+
+    entry: ["./src/app/js/index.js",],
+
     output: {
-        path: __dirname + "/src/static", 
-        filename: "bundel.js"
+        path: __dirname + "/src/static",
+        filename: "[name].js"
     },
+
+    plugins: [new MiniCssExtractPlugin({
+        filename:"css/[name].css"
+    })],
+
     module: {
         rules: [
             {
@@ -12,14 +21,14 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test:/\.(scss|css)$/i,
+                test: /\.(scss|css)$/i,
                 use:
-                [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader"
-                ]
+                    [
+                        MiniCssExtractPlugin.loader,
+                        "css-loader",
+                        "sass-loader"
+                    ]
             }
         ]
-    }
+    },
 }

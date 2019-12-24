@@ -1,3 +1,5 @@
+require("../css-o-sass/estilosLocales.css")
+
 const pedirApi=()=>{
     fetch("./api")
         .then(res => res.json())
@@ -5,10 +7,9 @@ const pedirApi=()=>{
             console.log(json)
         })
 }
-
+ 
 //se ejecuta cuando recargas la pajina
 window.onload= pedirApi
     
-
 
 
